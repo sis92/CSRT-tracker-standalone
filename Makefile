@@ -4,8 +4,9 @@ ARCH=$(shell bash -c "ldd `which dpkg` | grep libc.so | sed 's:.*/lib/\(.*\)/lib
 
 # ENABLE THESE FOR CUSTOM OPENCV INSTALL
 OPENCV_INC="/usr/include/opencv4/"
+OPENCV_ARCH_INC="/usr/include/x86_64-linux-gnu/opencv4/"
 OPENCV_LIBS="/usr/lib/x86_64-linux-gnu/"
-LIBS = -lopencv_core -lopencv_objdetect -lopencv_tracking -lopencv_videoio -lopencv_imgproc -lopencv_calib3d -lopencv_features2d -lopencv_flann -lopencv_highgui -lopencv_ml -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_video -lopencv_videostab -o csrt
+LIBS = -lopencv_core -lopencv_objdetect -lopencv_videoio -lopencv_imgproc -lopencv_calib3d -lopencv_features2d -lopencv_flann -lopencv_highgui -lopencv_ml -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_video -lopencv_videostab -o csrt
 
 # ENABLE THESE TO USE STANDARD ROS OPENCV INSTALL
 #OPENCV_INC="/opt/ros/kinetic/include/opencv-3.3.1-dev/"
@@ -20,7 +21,7 @@ CC = g++
 #CFLAGS = -std=c++14 -march=native -O0 -g3 -Wall -I . -I $(OPENCV_INC)
 
 # STEP 1
-CFLAGS = -std=c++14 -march=native -O3 -g0 -fprofile-generate -fprofile-dir=/tmp -Wall -I . -I $(OPENCV_INC)
+CFLAGS = -std=c++14 -march=native -O3 -g0 -fprofile-generate -fprofile-dir=/tmp -Wall -I . -I $(OPENCV_INC) -I $(OPENCV_ARCH_INC)
 
 # STEP 2
 #CFLAGS = -std=c++14 -march=native -O3 -g0 -fprofile-use -fprofile-dir=/tmp -fprofile-correction -Wall -I . -I $(OPENCV_INC)

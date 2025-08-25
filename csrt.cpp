@@ -1,6 +1,5 @@
 #include <tracker.hpp>
 #include <opencv2/core/utility.hpp>
-#include <opencv2/tracking.hpp>
 #include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
@@ -30,8 +29,8 @@ void splitstring (const std::string &str, char separator, std::vector<std::strin
 
 int main(int argc, char** argv)
 {
-    bool show_images   = false;
-    bool save_video    = true;
+    bool show_images   = true;
+    bool save_video    = false;
     bool resize_imshow = false;
     bool debug         = true;
 
@@ -160,7 +159,7 @@ int main(int argc, char** argv)
     int frame_height = cap.get(CAP_PROP_FRAME_HEIGHT);
     int video_fps = 30;
 
-    VideoWriter video_out("/tmp/out.avi", fourcc, video_fps, Size(frame_width, frame_height), true);
+    VideoWriter video_out("out.avi", fourcc, video_fps, Size(frame_width, frame_height), true);
 
     // do the tracking
     printf("Start the tracking process, press ESC to quit.\n");

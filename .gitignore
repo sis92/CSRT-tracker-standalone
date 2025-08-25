@@ -1,0 +1,60 @@
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Libraries
+*.lib
+*.a
+*.lai
+*.la
+*.dll
+*.so
+*.dylib
+
+# Build directories
+build/
+bin/
+obj/
+debug/
+release/
+tmp/
+
+# IDE-specific files (e.g., Visual Studio, CLion, VS Code)
+.vs/
+*.vcxproj.user
+*.suo
+*.opensdf
+*.sdf
+*.user
+.idea/
+cmake-build-*/
+.vscode/
+
+# Dependency management files (e.g., Conan, vcpkg)
+conan_build_info.txt
+conanfile.pyc
+conanbuildinfo.cmake
+conanbuildinfo.props
+conaninfo.txt
+vcpkg_installed/
+
+# Other temporary or generated files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+# Doxygen generated documentation
+html/
+latex/
